@@ -1,0 +1,11 @@
+# Windows image file caches
+Thumbs.db
+
+# Windows Folder config file
+Desktop.ini
+
+# Mac rubbish
+.DS_Store
+
+# Backups
+*.bak
