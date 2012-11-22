@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>tools4text - num2words</title>
+        <meta name="viewport" content="width=device-width">
+        <script src="tools4text-num2words.js"></script>
+        <script src="tools4text-num2words-en.js"></script>
+    </head>
+
+    <body>
+
+        <p>Welcome to Tools4Text!</p>
+        
+
+        
+        <table id="numberwords">
+            <thead>
+                <tr>
+                    <th>Number</th>
+                    <th>Word</th>
+                </tr>
+            </thead>
+            <tbody>
+
+<script>
+    function test(num) {
+        document.write("<tr>");
+        document.write("<td>" + num + "</td>");
+        document.write("<td>'" + tools4text.num2words("en", num) + "'</td>");
+        document.write("</tr>");
+    }
+    var i;
+
+    for (i=0; i<25; i++) {test(i);}
+    for (i=98; i<102; i++) {test(i);}
+    for (i=998; i<1002; i++) {test(i);}
+    for (i=1008; i<1022; i++) {test(i);}
+    for (i=1098; i<1102; i++) {test(i);}
+    for (i=9998; i<10002; i++) {test(i);}
+    for (i=99998; i<100002; i++) {test(i);}
+    for (i=999998; i<1000002; i++) {test(i);}
+    for (i=9999998; i<10000002; i++) {test(i);}
+    test(999999999);
+    test(1000000000); // one billion
+    test(1000000001);
+    test(10000000040);
+    test(9999999999);
+    test(11111111111111);
+    test(111111111111111);
+    test(1999999999999999);
+    test(11111111111111111); // notice the rounding error
+    test("oops"); // word
+    test("1"); // number as string
+    test(3.14); // non-integer
+    test("0x54"); // other number representations
+    
+</script>
+
+            </tbody>
+        </table>
+    </body>
+</html>
