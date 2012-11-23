@@ -8,7 +8,7 @@ Converts a number to words, in the specified language.
 
 Accepts a positive integer, and returns the text equivalent in the specified language.
 
-Example Usage:
+### Example Usage:
 
     num2words("en", 3015); // "three thousand and fifteen" (English)
 
@@ -16,12 +16,12 @@ Example Usage:
     
 See individual `tools4text-num2words-<language_code>.js` files for language-specific notes and configuration options.
 
-Implemented languages:
+### Implemented languages:
 
 *   `en` English (UK)
 *   `roman` Roman Numerals
 
-Planned languages:
+### Planned languages:
 
 *   `fr` French
 *   `cn` Chinese
