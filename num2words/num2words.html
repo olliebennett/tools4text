@@ -8,13 +8,14 @@
         <meta name="viewport" content="width=device-width">
         <script src="tools4text-num2words.js"></script>
         <script src="tools4text-num2words-en.js"></script>
+        <script src="tools4text-num2words-roman.js"></script>
     </head>
 
     <body>
 
-        <p>Welcome to Tools4Text!</p>
+        <h1>tools4text num2words Test Script</h1>
         
-
+        <p>Edit the `lang` variable defined in this file to test other languages.</p>
         
         <table id="numberwords">
             <thead>
@@ -26,37 +27,50 @@
             <tbody>
 
 <script>
+
+    /********************************************
+     *  Change the following "lang" definition  *
+     *  to test different languages.            *
+     ********************************************/
+
+    var lang = "en";
+    //var lang = "roman";
+
     function test(num) {
         document.write("<tr>");
         document.write("<td>" + num + "</td>");
-        document.write("<td>'" + tools4text.num2words("en", num) + "'</td>");
+        document.write("<td>'" + tools4text.num2words(lang, num) + "'</td>");
         document.write("</tr>");
     }
-    var i;
 
+    var i;
     for (i=0; i<25; i++) {test(i);}
     for (i=98; i<102; i++) {test(i);}
     for (i=998; i<1002; i++) {test(i);}
     for (i=1008; i<1022; i++) {test(i);}
     for (i=1098; i<1102; i++) {test(i);}
-    for (i=9998; i<10002; i++) {test(i);}
-    for (i=99998; i<100002; i++) {test(i);}
-    for (i=999998; i<1000002; i++) {test(i);}
-    for (i=9999998; i<10000002; i++) {test(i);}
-    test(999999999);
-    test(1000000000); // one billion
-    test(1000000001);
-    test(10000000040);
-    test(9999999999);
-    test(11111111111111);
-    test(111111111111111);
-    test(1999999999999999);
-    test(11111111111111111); // notice the rounding error
+    for (i=1998; i<2002; i++) {test(i);}
+    for (i=3998; i< 4001; i++) {test(i);}
+    if (lang !== 'roman') {
+        for (i=9998; i<10002; i++) {test(i);}
+        for (i=99998; i<100002; i++) {test(i);}
+        for (i=999998; i<1000002; i++) {test(i);}
+        for (i=9999998; i<10000002; i++) {test(i);}
+        test(999999999);
+        test(1000000000); // one billion
+        test(1000000001);
+        test(10000000040);
+        test(9999999999);
+        test(11111111111111);
+        test(111111111111111);
+        test(1999999999999999);
+        test(11111111111111111); // notice the rounding error (due to javascript)
+    }
     test("oops"); // word
     test("1"); // number as string
-    test(3.14); // non-integer
-    test("0x54"); // other number representations
-    
+    test(3.14159); // non-integer
+    test("0x5B"); // other number representations, such as hexadecimal
+
 </script>
 
             </tbody>

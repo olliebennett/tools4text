@@ -19,9 +19,9 @@ See individual `tools4text-num2words-<language_code>.js` files for language-spec
 Implemented languages:
 
 *   `en` English (UK)
+*   `roman` Roman Numerals
 
 Planned languages:
 
 *   `fr` French
-*   `roman` Roman Numerals
 *   `cn` Chinese
