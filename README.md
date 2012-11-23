@@ -12,8 +12,8 @@ Accepts a positive integer, and returns the text equivalent in the specified lan
 
     num2words("en", 3015); // "three thousand and fifteen" (English)
 
-    num2words("fr", 101); // "cent un" (French)
-    
+    num2words("roman", 1999); // "MCMXCIX" (Roman Numerals)
+
 See individual `tools4text-num2words-<language_code>.js` files for language-specific notes and configuration options.
 
 ### Implemented languages:
@@ -30,7 +30,7 @@ See individual `tools4text-num2words-<language_code>.js` files for language-spec
 
 Converts a time to words, in the specified language.
 
-Accepts a String representation of a time, in "HH:MM" format, and returns
+Accepts a String representation of a time, in "HH:MM" format, and returns the corresponding time in words.
 
 JavaScript `Date` objects are also accepted, and handled automatically.
 
