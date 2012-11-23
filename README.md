@@ -25,3 +25,19 @@ See individual `tools4text-num2words-<language_code>.js` files for language-spec
 
 *   `fr` French
 *   `cn` Chinese
+
+## time2words()
+
+Converts a time to words, in the specified language.
+
+Accepts a String representation of a time, in "HH:MM" format, and returns
+
+JavaScript `Date` objects are also accepted, and handled automatically.
+
+### Example Usage:
+
+    time2words("en", "23:45"); // "quarter to midnight" (English)
+
+### Implemented languages:
+
+* `en` English

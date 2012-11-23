@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>tools4text - time2words</title>
+        <meta name="viewport" content="width=device-width">
+        <script src="tools4text-time2words.js"></script>
+        <script src="../num2words/tools4text-num2words-en.js"></script>
+        <script src="tools4text-time2words-en.js"></script>
+    </head>
+
+    <body>
+
+        <h1>tools4text time2words Test Script</h1>
+        
+        <p>Edit the `lang` variable defined in this html file to test other languages.</p>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Number</th>
+                    <th>Word</th>
+                </tr>
+            </thead>
+            <tbody>
+
+<script>
+
+    /********************************************
+     *  Change the following "lang" definition  *
+     *  to test different languages.            *
+     ********************************************/
+
+    var lang = "en";
+
+    function test(time) {
+        
+        document.getElementById('numberwords-tbody')
+        
+        document.write("<tr>");
+        document.write("<td>" + time + "</td>");
+        document.write("<td>'" + tools4text.time2words(lang, time) + "'</td>");
+        document.write("</tr>");
+    }
+    
+    test(new Date());
+
+    var hour, minute;
+    for (hour = 0; hour < 24; hour += 1) {
+        for (minute = 0; minute < 60; minute += 1) {
+            test((hour < 10 ? "0" : "") + hour + ":" + (minute < 10 ? "0" : "") + minute);
+        }
+    }
+
+    test("oops"); // word
+    test("1"); // number as string
+    test(3.14159); // non-integer
+    test("0x5B"); // other number representations, such as hexadecimal
+
+</script>
+
+            </tbody>
+        </table>
+    </body>
+</html>
